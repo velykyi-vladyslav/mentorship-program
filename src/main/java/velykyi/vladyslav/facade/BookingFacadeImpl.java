@@ -8,7 +8,8 @@ import velykyi.vladyslav.service.EventService;
 import velykyi.vladyslav.service.TicketService;
 import velykyi.vladyslav.service.UserService;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
 public class BookingFacadeImpl implements BookingFacade {
 

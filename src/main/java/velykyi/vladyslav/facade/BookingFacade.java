@@ -8,10 +8,6 @@ import velykyi.vladyslav.model.User;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Groups together all operations related to tickets booking.
- * Created by maksym_govorischev.
- */
 public interface BookingFacade {
 
     /**

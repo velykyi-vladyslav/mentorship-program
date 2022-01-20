@@ -2,7 +2,7 @@ package velykyi.vladyslav.service;
 
 import velykyi.vladyslav.model.User;
 
-import java.util.*;
+import java.util.List;
 
 public interface UserService {
     User getUserById(long eventId);
