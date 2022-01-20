@@ -6,8 +6,7 @@ import velykyi.vladyslav.dao.UserDao;
 import velykyi.vladyslav.model.User;
 import velykyi.vladyslav.service.UserService;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 

@@ -8,7 +8,7 @@ import velykyi.vladyslav.model.User;
 import velykyi.vladyslav.model.impl.TicketImpl;
 import velykyi.vladyslav.service.TicketService;
 
-import java.util.*;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 

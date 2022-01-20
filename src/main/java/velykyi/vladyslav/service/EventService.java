@@ -2,7 +2,8 @@ package velykyi.vladyslav.service;
 
 import velykyi.vladyslav.model.Event;
 
-import java.util.*;
+import java.util.List;
+import java.util.Date;
 
 public interface EventService {
     Event createEvent(Event event);

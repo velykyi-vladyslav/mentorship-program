@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import velykyi.vladyslav.MapStorage;
 import velykyi.vladyslav.model.Ticket;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 import static velykyi.vladyslav.dao.DaoKeyName.TICKET_PREFIX;
 

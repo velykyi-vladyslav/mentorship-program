@@ -10,7 +10,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import velykyi.vladyslav.model.Event;
 import velykyi.vladyslav.model.impl.EventImpl;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
