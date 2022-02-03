@@ -1,7 +1,7 @@
 package velykyi.vladyslav.service.impl;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import velykyi.vladyslav.dao.EventDao;
 import velykyi.vladyslav.model.Event;
 import velykyi.vladyslav.service.EventService;
@@ -11,10 +11,15 @@ import java.util.Date;
 
 import static java.util.stream.Collectors.toList;
 
-
+@Service
 public class EventServiceImpl implements EventService {
-    @Autowired
+
     private EventDao eventDao;
+
+    @Autowired
+    public EventServiceImpl(EventDao eventDao) {
+        this.eventDao = eventDao;
+    }
 
     @Override
     public Event createEvent(Event event) {
@@ -29,14 +34,14 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<Event> getEventsByTitle(String title) {
-        return eventDao.getAllEvents().stream()
-                                      .filter(event -> event.getTitle()
-                                      .equals(title)).collect(toList());
+        return eventDao.getAll().stream()
+                                      .filter(event -> event.getTitle().equals(title))
+                                      .collect(toList());
     }
 
     @Override
     public List<Event> getEventsForDay(Date day) {
-        return eventDao.getAllEvents().stream()
+        return eventDao.getAll().stream()
                                       .filter(event -> equals(event.getDate().getDay(), day.getDay()))
                                       .collect(toList());
     }

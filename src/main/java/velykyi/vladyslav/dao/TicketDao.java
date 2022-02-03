@@ -1,16 +1,14 @@
 package velykyi.vladyslav.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import velykyi.vladyslav.MapStorage;
 import velykyi.vladyslav.model.Ticket;
 
-import java.util.*;
-
 import static velykyi.vladyslav.dao.DaoKeyName.TICKET_PREFIX;
 
+@Component
 public class TicketDao extends AbstractDao<Ticket> {
 
-    @Autowired
     protected TicketDao(MapStorage mapStorage) {
         super(mapStorage);
     }
@@ -23,9 +21,5 @@ public class TicketDao extends AbstractDao<Ticket> {
     @Override
     public String getPrefix() {
         return TICKET_PREFIX;
-    }
-
-    public List<Ticket> getAllTickets() {
-        return new ArrayList<>(getStorage().values());
     }
 }

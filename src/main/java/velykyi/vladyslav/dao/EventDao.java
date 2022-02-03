@@ -1,16 +1,14 @@
 package velykyi.vladyslav.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import velykyi.vladyslav.MapStorage;
 import velykyi.vladyslav.model.Event;
 
-import java.util.*;
-
 import static velykyi.vladyslav.dao.DaoKeyName.EVENT_PREFIX;
 
+@Component
 public class EventDao extends AbstractDao<Event> {
 
-    @Autowired
     public EventDao(MapStorage mapStorage) {
         super(mapStorage);
     }
@@ -23,9 +21,5 @@ public class EventDao extends AbstractDao<Event> {
     @Override
     public String getPrefix() {
         return EVENT_PREFIX;
-    }
-
-    public List<Event> getAllEvents(){
-        return new ArrayList<>(super.getStorage().values());
     }
 }

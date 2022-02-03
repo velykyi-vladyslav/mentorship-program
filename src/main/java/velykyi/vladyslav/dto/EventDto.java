@@ -1,56 +1,44 @@
-package velykyi.vladyslav.model.impl;
+package velykyi.vladyslav.dto;
 
-import velykyi.vladyslav.model.Event;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class EventDto {
 
-public class EventImpl implements Event, Serializable {
-
-    private static final long serialVersionUID = 2381352458847000576L;
-
+    @JsonProperty("id")
     private long id;
 
+    @JsonProperty("title")
     private String title;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date date;
 
-    public EventImpl() {
-    }
-
-    public EventImpl(long id, String title) {
-        this.id = id;
-        this.title = title;
-    }
-
-    @Override
     public long getId() {
         return id;
     }
 
-    @Override
     public void setId(long id) {
         this.id = id;
     }
 
-    @Override
     public String getTitle() {
         return title;
     }
 
-    @Override
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @Override
     public Date getDate() {
         return date;
     }
 
-    @Override
     public void setDate(Date date) {
         this.date = date;
     }
@@ -63,7 +51,7 @@ public class EventImpl implements Event, Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        EventImpl event = (EventImpl) o;
+        EventDto event = (EventDto) o;
         return id == event.id && Objects.equals(title, event.title) && Objects.equals(date, event.date);
     }
 

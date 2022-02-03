@@ -68,7 +68,7 @@ class EventDaoTest extends BaseTest {
     void getAllEvents(){
         eventDao.save(buildEventWithChangedTitle());
 
-        List<Event> actually = eventDao.getAllEvents();
+        List<Event> actually = eventDao.getAll();
         List<Event> expected = new ArrayList<>();
         expected.add(buildEvent());
         expected.add(buildEventWithChangedTitle());

@@ -3,6 +3,7 @@ package velykyi.vladyslav.it;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import velykyi.vladyslav.facade.BookingFacadeImpl;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations={"/storage-beans.xml","/service-beans.xml"})
+@SpringBootTest
 class BookingFacadeIT {
 
     @Autowired

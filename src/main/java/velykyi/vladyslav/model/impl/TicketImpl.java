@@ -1,10 +1,14 @@
 package velykyi.vladyslav.model.impl;
 
 import velykyi.vladyslav.model.Ticket;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Objects;
 
+@XmlRootElement(name = "ticket")
+@XmlType(propOrder = {"id", "eventId", "userId", "place", "category" })
 public class TicketImpl implements Ticket, Serializable {
 
     private static final long serialVersionUID = 5921796209277529081L;
