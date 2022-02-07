@@ -6,8 +6,11 @@ public interface User extends Model {
      * @return User Id.
      */
     long getId();
+
     void setId(long id);
+
     String getName();
+
     void setName(String name);
 
     /**
@@ -15,5 +18,6 @@ public interface User extends Model {
      * @return User email.
      */
     String getEmail();
+
     void setEmail(String email);
 }

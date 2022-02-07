@@ -3,8 +3,9 @@ package velykyi.vladyslav.facade;
 import velykyi.vladyslav.model.Event;
 import velykyi.vladyslav.model.Ticket;
 import velykyi.vladyslav.model.User;
+import javax.xml.bind.JAXBException;
 
-
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +20,10 @@ public interface BookingFacade {
      * @return Event.
      */
     Event getEventById(long eventId);
+
+    List<Ticket> get();
+
+    void preloadTickets() throws IOException, JAXBException;
 
     /**
      * Get list of events by matching title. Title is matched using 'contains' approach.

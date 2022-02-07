@@ -1,24 +1,28 @@
 package velykyi.vladyslav.service.impl;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import velykyi.vladyslav.dao.UserDao;
 import velykyi.vladyslav.model.User;
 import velykyi.vladyslav.service.UserService;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+@Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserDao userDao;
 
+    @Autowired
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
-    public User getUserById(long eventId) {
-        return userDao.get(eventId);
+    public User getUserById(long userId) {
+        return userDao.get(userId);
     }
 
     @Override
@@ -53,8 +57,8 @@ public class UserServiceImpl implements UserService {
         userDao.delete(userId);
         return true;
     }
+
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
-
 }

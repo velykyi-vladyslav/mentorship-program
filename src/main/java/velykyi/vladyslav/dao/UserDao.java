@@ -1,16 +1,17 @@
 package velykyi.vladyslav.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import velykyi.vladyslav.MapStorage;
 import velykyi.vladyslav.model.User;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static velykyi.vladyslav.dao.DaoKeyName.USER_PREFIX;
 
+@Component
 public class UserDao extends AbstractDao<User>{
 
-    @Autowired
     protected UserDao(MapStorage mapStorage) {
         super(mapStorage);
     }
